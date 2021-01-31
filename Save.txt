@@ -1,0 +1,32 @@
+info
+docker run --volume C:/Users/alino/OneDrive/Desktop/Redis/redis.conf:/usr/local/etc/redis/redis.conf --name myredis redis redis-server /usr/local/etc/redis/redis.conf
+redis-cli -h 127.0.0.1 -p 6060
+-------------------------------
+save data:
+RDB ======>point in time snapshot ========>Redis Database File =>defualt on =>data befor remove and comperse =>backup/restor =>.rdb file
+save time countcommand =>ram on disk snapshot
+bgsave ==>background  =>fork from thread
+set user:1 "ali"
+save ===>force create file
+-----------------------------------
+AOF ======>write operation logging(sql) ===>append only file
+save log change just command not query
+fsync ===> time write down
+best from rdb
+
+bad large log
+down compers log 
+
+
+appendonly no / yes
+
+fsync() : os 30 min ===value no   performance up 
+          value : allways by command (sql log) performance down dat ok
+	  value : everysec defualt
+
+appendfsync everysec
+-----------------------------
+use RDB and AOF  => aof file ok (not dump from rdb)
+---------------------------------
+
+

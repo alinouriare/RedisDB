@@ -1,0 +1,61 @@
+DataType:
+String:
+set user:1 "ali nouri" 
+get user:1
+------------------------
+set user:1:age 100
+incr user:1:age    =======> number  + 1
+------------------------------------------
+set mycache "data"
+expire mycache 30
+ttl mycache
+persist mycache =======>not expire
+-----------------------------------------
+APPEND user:1 "from iran" ===========> add 
+strlen user:1  ==========> len string
+GETRANGE user:1 1 6 ==========>between 1 6
+------------------------------------------------------------
+DataType:
+List:
+LPUSH list:1 1
+LPUSH list:1 2
+LPUSH list:1 3
+LRANGE list:1 1 3
+RPUSH list:1 0
+
+LPOP list:1 remove
+RPOP list:1 remove
+-------------------------------------
+DataType:
+Set: list meghdar tekrari nadare
+SADD item:1 1
+SADD item:1 1 ==========> not save
+SCARD item:1
+SADD item:1 2
+SMEMBERS item:1
+SADD item:2 1
+SDIFF item:1 item:2
+SINTER item:1 item:2
+SUNION item:1 item:2
+----------
+DataType: sorted set
+ZADD akey 12 sql
+ZADD akey 1 mongo
+---------------------------------------------------------------
+DataType:
+Hash:best save object
+HSET object:1 name "ali" age "34"
+HGETALL object:1
+
+HMset object:2 name ali age 34 phone 10
+HGET object:2 phone
+HMGET object:2 phone name 
+
+ HKEYS object:2
+ HVALS object:2
+HDEL object:1 name
+HEXISTS object:1 name
+-------------------------------------------------
+
+
+

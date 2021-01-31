@@ -1,0 +1,2 @@
+127.0.0.1:6379> PUBLISH A "ABC"
+SUBSCRIBE A =========>onther redis

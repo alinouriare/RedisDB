@@ -1,0 +1,26 @@
+# requirepass foobared
+requirepass ali
+
+docker run --volume C:/Users/alino/OneDrive/Desktop/Redis/redis.conf:/usr/local/etc/redis/redis.conf --name myredis redis redis-server /usr/local/etc/redis/redis.conf
+
+# redis-cli -h 127.0.0.1 -p 6060
+127.0.0.1:6060> ping
+(error) NOAUTH Authentication required.
+127.0.0.1:6060>
+
+
+
+# redis-cli -h 127.0.0.1 -p 6060 -a ali
+Warning: Using a password with '-a' or '-u' option on the command line interface may not be safe.
+127.0.0.1:6060> ping
+PONG
+127.0.0.1:6060>
+
+
+
+
+------------------------------------
+Replication
+slaveof
+# replicaof <masterip> <masterport>
+# masterauth <master-password>
